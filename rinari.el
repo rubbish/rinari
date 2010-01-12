@@ -162,6 +162,12 @@ editing of the rake command arguments."
   (ruby-compilation-rake task edit-cmd-args
 			 (if rinari-rails-env (list (cons "RAILS_ENV" rinari-rails-env)))))
 
+(defun rinari-jrake ()
+  "Run rinari-rake with jrake"
+  (interactive)
+  (let ((ruby-compilation-executable-rake "jrake"))
+      (rinari-rake)))
+
 (defun rinari-cap (&optional task edit-cmd-args)
   "Tab completion selection of a capistrano task to execute with
 the output dumped to a compilation buffer allowing jumping
